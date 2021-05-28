@@ -1,5 +1,6 @@
 import pickle
 from flask import Flask, render_template, request
+from flask_ngrok import run_with_ngrok
 import dlib
 import os
 from mtcnn.mtcnn import MTCNN
@@ -95,4 +96,6 @@ def home_page():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    #app.run(host='0.0.0.0', debug=True)
+    run_with_ngrok(app)   
+    app.run()
